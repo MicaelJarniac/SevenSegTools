@@ -1,3 +1,5 @@
+# Please note that this is just a temporary, proof of concept, script
+
 numbers     = open("fonts/numbers", "r")
 alphabet    = open("fonts/alphabet", "r")
 
