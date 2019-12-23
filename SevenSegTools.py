@@ -1,8 +1,7 @@
 numbers     = open("fonts/numbers", "r")
 alphabet    = open("fonts/alphabet", "r")
 
-for i in numbers:
-    b = 0b0
+for i in alphabet:
     print(i, end = '')
     c = i[4:11]
     if c[0] == '1':
