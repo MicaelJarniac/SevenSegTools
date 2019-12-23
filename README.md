@@ -5,8 +5,9 @@ This project is currently on its pretty early stages, so don't expect to find so
 
 ## Roadmap
 - [ ] Fonts
-
-- [ ] Tools
-    - [ ] Font configuration tool
-    - [ ] Font preview tool
-    - [ ] Font editing tool
+  - [x] Numbers
+  - [x] Alphabet
+- [ ] Tool
+  - [ ] Font configuration
+  - [ ] Font preview
+  - [ ] Font editing
