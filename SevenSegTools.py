@@ -12,23 +12,26 @@ for f in fonts:
         done  = False
         first = True
         while not done:
-            if l[c] is not '\n' and l[c] is not '/':
-                if l[c] is not ' ':
-                    if first:
-                        # TODO Set label
-                        # label = l[c]
-                        print('label = ' + l[c])
-                        first = False
-                        c += 1
-                    else:
-                        # TODO Set value
-                        # value = l[c:c + 7]
-                        print('value = ' + l[c:c + 7])
-                        c += 7
-                else:
-                    c += 1
-            else:
+            if c > len(l):
                 done = True
+            else:
+                if l[c] is not '\n' and l[c] is not '/':
+                    if l[c] is not ' ':
+                        if first:
+                            # TODO Set label
+                            # label = l[c]
+                            print('label = ' + l[c])
+                            first = False
+                            c += 1
+                        else:
+                            # TODO Set value
+                            # value = l[c:c + 7]
+                            print('value = ' + l[c:c + 7])
+                            c += 7
+                    else:
+                        c += 1
+                else:
+                    done = True
 
 #for i in alphabet:
 #    print(i, end = '')
