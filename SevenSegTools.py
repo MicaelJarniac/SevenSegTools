@@ -26,9 +26,9 @@ for f in fonts:
                             first = False
                             c += 1
                         else:
-                            value = l[c:c + 7]
+                            value = int(l[c:c + 7], 2)
                             chars[label].append(value)
-                            print('value = ' + value)
+                            print('value = {0:07b}'.format(value))
                             c += 7
                     else:
                         c += 1
@@ -37,36 +37,27 @@ for f in fonts:
 
 print(chars)
 
-#for i in alphabet:
-#    print(i, end = '')
-#    c = i[4:11]
-#    if c[0] == '1':
-#        print(" #### ")
-#    else:
-#        print(" .... ")
-#    for x in range(3):
-#        if c[5] == '1':
-#            print("#    ", end = '')
-#        else:
-#            print(".    ", end = '')
-#        if c[1] == '1':
-#            print("#")
-#        else:
-#            print(".")
-#    if c[6] == '1':
-#        print(" #### ")
-#    else:
-#        print(" .... ")
-#    for x in range(3):
-#        if c[4] == '1':
-#            print("#    ", end = '')
-#        else:
-#            print(".    ", end = '')
-#        if c[2] == '1':
-#            print("#")
-#        else:
-#            print(".")
-#    if c[3] == '1':
-#        print(" #### ")
-#    else:
-#        print(" .... ")
+for c in chars:
+    for v in range(len(chars[c])):
+        r = chars[c][v]
+        d = [False] * 7
+        print(r)
+        for s in range(len(d)):
+            if ((r >> s) & 1):
+                d[s] = True
+        if d[6]: print(" #### ")
+        else: print(" .... ")
+        for x in range(3):
+            if d[1]: print("#    ", end = '')
+            else: print(".    ", end = '')
+            if d[5]: print("#")
+            else: print(".")
+        if d[0]: print(" #### ")
+        else: print(" .... ")
+        for x in range(3):
+            if d[2]: print("#    ", end = '')
+            else: print(".    ", end = '')
+            if d[4]: print("#")
+            else: print(".")
+        if d[3]: print(" #### ")
+        else: print(" .... ")
