@@ -15,7 +15,6 @@ Each line can have multiple groups of 7 characters for alternate representations
 The available fonts are in [the ./fonts folder](fonts), and currently are [numbers](fonts/numbers) and [alphabet](fonts/alphabet).
 
 ### Segments
-
 The following diagram represents how the segments are labeled on an SSD.
 
 ```
