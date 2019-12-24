@@ -4,34 +4,38 @@ numbers  = open("fonts/numbers", "r")
 alphabet = open("fonts/alphabet", "r")
 
 fonts = [numbers, alphabet]
+chars = {}
 
-id = 0
 for f in fonts:
     for l in f:
         c = 0
         done  = False
         first = True
+        label = None
         while not done:
+            value = None
             if c > len(l):
                 done = True
             else:
                 if l[c] is not '\n' and l[c] is not '/':
                     if l[c] is not ' ':
                         if first:
-                            # TODO Set label
-                            # label = l[c]
-                            print('label = ' + l[c])
+                            label = l[c]
+                            chars[label] = []
+                            print('label = ' + label)
                             first = False
                             c += 1
                         else:
-                            # TODO Set value
-                            # value = l[c:c + 7]
-                            print('value = ' + l[c:c + 7])
+                            value = l[c:c + 7]
+                            chars[label].append(value)
+                            print('value = ' + value)
                             c += 7
                     else:
                         c += 1
                 else:
                     done = True
+
+print(chars)
 
 #for i in alphabet:
 #    print(i, end = '')
